@@ -1,3 +1,4 @@
+using IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +19,7 @@ namespace Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            RegisterServices(services);
             services.AddControllers();
         }
 
@@ -40,6 +41,11 @@ namespace Api
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            NativeInjectorBootStrapper.RegisterServices(services);
         }
     }
 }
