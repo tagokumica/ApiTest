@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using Application.Validate;
 using Application.ViewModel;
 using Xunit;
