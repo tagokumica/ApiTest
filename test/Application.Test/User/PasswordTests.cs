@@ -7,7 +7,6 @@ namespace Application.Test.User
     public class PasswordTests
     {
 
-
         [Fact(DisplayName = "Validar Senha com Nove ou mais caracteres")]
         [Trait("Categoria", "Senha")]
         public void Password_Validate_NineOrMoreCharacters()
