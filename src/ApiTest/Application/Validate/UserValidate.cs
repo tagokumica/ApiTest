@@ -6,9 +6,6 @@ namespace Application.Validate
 {
     public class UserValidate: IUserValidate
     {
-
-      
-
         public void Dispose()
         {
             GC.SuppressFinalize(this);
@@ -28,7 +25,8 @@ namespace Application.Validate
             var hasMiniMaxChars = new Regex(@".{9,15}");
             var hasLowerChar = new Regex(@"[a-z]+");
             var hasSymbols = new Regex(@"[!@#$%^&*()+-]");
-            var repeatedCharacter = new Regex(@"(\w)*.*\1");
+            var repeatedCharacter = new Regex(@"(.)\1+");
+
             if (!hasLowerChar.IsMatch(input))
             {
                 return false;
@@ -50,7 +48,7 @@ namespace Application.Validate
             {
                 return false;
             }
-            else if (!repeatedCharacter.IsMatch(input))
+            else if (repeatedCharacter.IsMatch(input))
             {
                 return false;
             }
