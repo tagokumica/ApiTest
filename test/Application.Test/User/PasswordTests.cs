@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Application.Validate;
 using Application.ViewModel;
 using Xunit;
@@ -90,7 +91,7 @@ namespace Application.Test.User
             // Arrange
             var user = new UserViewModel()
             {
-                Password = "Aasdfghjkl9*"
+                Password = "Aassdfghjkl9*"
             };
 
             // Act
