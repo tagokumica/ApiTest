@@ -1,4 +1,5 @@
 using Application.Validate;
+using Application.Validate.Spec;
 using Application.ViewModel;
 using Xunit;
 
@@ -18,9 +19,9 @@ namespace Application.Test.User
             };
 
             // Act
-            var validationResult = new UserValidate();
+            var hasMinMax = new HasMinMaxCharsSpec();
 
-            var result = validationResult.IsValid(user.Password);
+            var result = hasMinMax.IsValid(user.Password);
 
             // Assert
             Assert.True(result);
@@ -37,9 +38,9 @@ namespace Application.Test.User
             };
 
             // Act
-            var validationResult = new UserValidate();
+            var hasMinMax = new HasMinMaxCharsSpec();
 
-            var result = validationResult.IsValid(user.Password);
+            var result = hasMinMax.IsValid(user.Password);
 
             // Assert
             Assert.False(result);
@@ -56,9 +57,9 @@ namespace Application.Test.User
             };
 
             // Act
-            var validationResult = new UserValidate();
+            var hasCharNotNull = new HasCharNotNullSpec();
 
-            var result = validationResult.IsValid(user.Password);
+            var result = hasCharNotNull.IsValid(user.Password);
 
             // Assert
             Assert.False(result);
@@ -93,9 +94,9 @@ namespace Application.Test.User
             };
 
             // Act
-            var validationResult = new UserValidate();
+            var repeatedCharacter = new RepeatedCharacterSpec();
 
-            var result = validationResult.IsValid(user.Password);
+            var result = repeatedCharacter.IsValid(user.Password);
 
             // Assert
             Assert.False(result);
