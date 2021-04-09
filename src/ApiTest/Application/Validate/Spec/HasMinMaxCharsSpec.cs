@@ -9,7 +9,7 @@ namespace Application.Validate.Spec
         {
             var hasMiniMaxChars = new Regex(@".{9,15}");
 
-            return !hasMiniMaxChars.IsMatch(password);
+            return hasMiniMaxChars.IsMatch(password);
         }
     }
 }

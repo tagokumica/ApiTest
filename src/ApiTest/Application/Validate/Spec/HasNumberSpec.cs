@@ -9,9 +9,7 @@ namespace Application.Validate.Spec
         {
             var hasNumber = new Regex(@"[0-9]+");
 
-
-
-            return !hasNumber.IsMatch(password);
+            return hasNumber.IsMatch(password);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Application.Validate.Spec
         {
             var hasUpperChar = new Regex(@"[A-Z]+");
 
-            return !hasUpperChar.IsMatch(password);
+            return hasUpperChar.IsMatch(password);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Application.Validate.Spec
         {
             var hasSymbols = new Regex(@"[!@#$%^&*()+-]");
 
-            return !hasSymbols.IsMatch(password);
+            return hasSymbols.IsMatch(password);
         }
     }
 }

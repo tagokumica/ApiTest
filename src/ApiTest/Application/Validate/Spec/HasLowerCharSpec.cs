@@ -9,7 +9,7 @@ namespace Application.Validate.Spec
         {
             var hasLowerChar = new Regex(@"[a-z]+");
 
-            return !hasLowerChar.IsMatch(password);
+            return hasLowerChar.IsMatch(password);
         }
     }
 }

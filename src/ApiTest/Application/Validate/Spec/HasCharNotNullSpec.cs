@@ -6,9 +6,7 @@ namespace Application.Validate.Spec
     {
         public bool IsValid(string password)
         {
-            var hasCharNotNull = string.IsNullOrWhiteSpace(password);
-
-            return !hasCharNotNull;
+            return !string.IsNullOrWhiteSpace(password); 
         }
     }
 }
