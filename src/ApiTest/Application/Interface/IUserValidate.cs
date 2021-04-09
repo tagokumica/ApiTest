@@ -2,7 +2,7 @@
 
 namespace Application.Interface
 {
-    public interface IUserValidate: IDisposable
+    public interface IUserValidate
     {
         bool IsValid(string password);
     }
