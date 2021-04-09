@@ -41,13 +41,10 @@ Dessa forma tambem as regras ficam isoladas e podem ser testadas separadamente, 
 
 #### Exemplo de uso da API:
 
-http
+'''http
 POST /api/usuario/validar-senha
 Content-Type: application/json
 
 {
     "password": "AbTp9!fok"
 }
-
-
-e a resposta deve ser conter `status-code: 200` e `body: true`
